@@ -20,6 +20,13 @@ def _raise_mujoco_py_error(*args: Any, **kwargs: Any):
 register(id="Reacher-v2", entry_point=_raise_mujoco_py_error)
 
 register(
+    id="Hit_env",
+    entry_point="gymnasium.envs.mujoco.hit_env:HitEnv",
+    max_episode_steps=50,
+    reward_threshold=-3.75,
+)
+
+register(
     id="Reacher-v4",
     entry_point="gymnasium.envs.mujoco.reacher_v4:ReacherEnv",
     max_episode_steps=50,

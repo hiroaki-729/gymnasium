@@ -12,13 +12,14 @@
     <geom name="floor" type="plane" size="5 5 0.1" rgba="0.8 0.9 0.8 1"/>
     <light pos="0 1 1" dir="0 -1 -1" diffuse="1 1 1"/>
     <body pos="0 0 1">
+    <!-- 肩 -->
       <!-- <joint name ="shoulder" type="ball"/> -->
       <joint name ="shoulder" type="hinge" axis="0 1 0" range="-90 0"/> 
       <!-- <joint type="hinge" axis="0 1 0"/>  -->
       <geom type="capsule" size="0.06" fromto="0 0 0  0 0 -.4" mass="3.0"/>
       <body pos="0 0 -0.4">
       <!-- 肘 -->
-        <joint name="elbow" type="hinge" axis="0 1 0" range="0 90"/>            
+        <joint name="elbow" type="hinge" axis="0 1 0" range="0 90"/>          
         <geom type="capsule" size="0.04" fromto="0 0 0  .3 0 0" mass="2.0"/>
         <body pos=".3 0 0">
         <!-- 手首？ -->
@@ -32,4 +33,9 @@
       </body>
     </body>
   </worldbody>
+  <actuator>
+		<motor ctrllimited="true" ctrlrange="-1.0 1.0" gear="200.0" joint="shoulder"/>
+		<motor ctrllimited="true" ctrlrange="-1.0 1.0" gear="200.0" joint="elbow"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" gear="200.0" joint="wrist"/>
+	</actuator>
 </mujoco>
