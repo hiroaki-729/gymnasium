@@ -17,7 +17,7 @@
       <joint name ="shoulder" type="hinge" axis="0 1 0" range="-90 0"/> 
       <!-- <joint type="hinge" axis="0 1 0"/>  -->
       <geom type="capsule" size="0.06" fromto="0 0 0  0 0 -.4" mass="3.0"/>
-      <body pos="0 0 -0.4">
+      <body name="a" pos="0 0 -0.4">
       <!-- 肘 -->
         <joint name="elbow" type="hinge" axis="0 1 0" range="0 90"/>          
         <geom type="capsule" size="0.04" fromto="0 0 0  .3 0 0" mass="2.0"/>

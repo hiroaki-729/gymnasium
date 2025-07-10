@@ -1,0 +1,33 @@
+<mujoco model="example">
+<!-- 色の設定 -->
+  <default>
+    <geom rgba=".8 .6 .4 1"/>
+  </default>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="1 1 1" rgb2=".6 .8 1" width="256" height="256"/>
+  </asset>
+<!-- x,y,z: 横、奥、高さ -->
+  <worldbody>
+
+    <geom pos="0 0 0"name="floor" type="plane" size="5 5 0.1" rgba="0.8 0.9 0.8 1"/>
+    <light pos="0 1 1" dir="0 -1 -1" diffuse="1 1 1"/>
+    <!-- <body pos="0 0 0"> -->
+    <body pos="0 0 0.06">
+    <!-- 肩 -->
+      <!-- <joint name ="shoulder" type="ball"/> -->
+      <!-- <joint name ="shoulder" type="hinge" axis="0 1 0" range="-90 0.1"/>  -->
+      <joint name ="shoulder" type="hinge" axis="0 0 1" range="0 90"/> 
+      <!-- <joint type="hinge" axis="0 1 0"/>  -->
+      <!-- <geom type="capsule" size="0.06" fromto="0 0 0  0 0 -.4" mass="3.0"/> -->
+      <geom type="capsule" size="0.04" fromto="0 0 0  .4 0 0" mass="3.0"/>
+      <!-- <geom type="capsule" size="0.06" fromto="0 0 0  0 .1 .5" mass="3.0"/> -->
+      <!-- <body pos=".4 1 0"> -->
+      <body pos=".4 0 0">
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+		<motor ctrllimited="true" ctrlrange="-1.0 1.0" gear="200.0" joint="shoulder"/>
+	</actuator>
+</mujoco>

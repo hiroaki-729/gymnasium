@@ -10,7 +10,7 @@ from gymnasium.spaces import Box
 DEFAULT_CAMERA_CONFIG = {"trackbodyid": 0}
 
 
-class HitEnv(MujocoEnv, utils.EzPickle):
+class Link1(MujocoEnv, utils.EzPickle):
     metadata = {
         "render_modes": [
             "human",
@@ -22,8 +22,7 @@ class HitEnv(MujocoEnv, utils.EzPickle):
 
     def __init__(
         self,
-        # xml_file: str = "reacher.xml",
-        xml_file: str = "hit_env.xml",
+        xml_file: str = "1link.xml",
         frame_skip: int = 2,
         default_camera_config: dict[str, float | int] = DEFAULT_CAMERA_CONFIG,
         reward_dist_weight: float = 1,   #報酬重み
@@ -43,7 +42,7 @@ class HitEnv(MujocoEnv, utils.EzPickle):
         self._reward_dist_weight = reward_dist_weight
         self._reward_control_weight = reward_control_weight
 
-        observation_space = Box(low=-np.inf, high=np.inf, shape=(15,), dtype=np.float64)
+        observation_space = Box(low=-np.inf, high=np.inf, shape=(5,), dtype=np.float64)
 
         MujocoEnv.__init__(
             self,

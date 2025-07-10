@@ -27,6 +27,13 @@ register(
 )
 
 register(
+    id="1link",
+    entry_point="gymnasium.envs.mujoco.1link:Link1",
+    max_episode_steps=50,
+    reward_threshold=-3.75,
+)
+
+register(
     id="Reacher-v4",
     entry_point="gymnasium.envs.mujoco.reacher_v4:ReacherEnv",
     max_episode_steps=50,
