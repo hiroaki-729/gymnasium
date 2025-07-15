@@ -22,14 +22,14 @@ register(id="Reacher-v2", entry_point=_raise_mujoco_py_error)
 register(
     id="Hit_env",
     entry_point="gymnasium.envs.mujoco.hit_env:HitEnv",
-    max_episode_steps=50,
+    # max_episode_steps=50,
     reward_threshold=-3.75,
 )
 
 register(
-    id="1link",
-    entry_point="gymnasium.envs.mujoco.1link:Link1",
-    max_episode_steps=50,
+    id="link1",
+    entry_point="gymnasium.envs.mujoco.link1:Link1",
+    # max_episode_steps=50,
     reward_threshold=-3.75,
 )
 
