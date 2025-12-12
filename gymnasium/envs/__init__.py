@@ -30,7 +30,7 @@ register(
     id="link1",
     entry_point="gymnasium.envs.mujoco.link1:Link1",
     # max_episode_steps=50,
-    reward_threshold=-3.75,
+    # reward_threshold=-3.75,
 )
 
 register(
